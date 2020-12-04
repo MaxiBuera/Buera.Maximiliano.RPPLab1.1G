@@ -128,7 +128,6 @@ int main()
                 else{
 
                     printf("\nDebe ingresar almenos un cliente\n");
-                    system("cls");
                 }
                 break;
             case 4:
@@ -155,7 +154,6 @@ int main()
                 else{
 
                     printf("\nDebe ingresar almenos un cliente\n");
-                    system("cls");
                 }
                 break;
             case 6:
