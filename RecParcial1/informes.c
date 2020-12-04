@@ -149,3 +149,48 @@ int informes_clientesConSusAlquileres(eCliente* arrayClientes, int limiteCliente
 
     return retorno;
 }
+
+/*int informes_tiempoPromedioRealDeLosEquipos(eCliente* arrayClientes, int limiteClientes, eAlquiler* arrayAlquileres,int limiteAlquileres){
+    //sin terminar
+
+    int retorno = -1;
+    int i;
+    float promedioAmoladora;
+    int tiempoTotalAmoladora = 0;
+    int cantAmoladora=0;
+    float promedioMezcladora;
+    int tiempoTotalMezcladora = 0;
+    int cantMezcladora=0;
+    float promedioTaladro;
+    int tiempoTotalTaladro = 0;
+    int cantTaladro =0;
+
+    if(arrayAlquileres != NULL && limiteAlquileres > 0){
+
+        retorno = 0;
+        for(i=0;i<limiteAlquileres;i++){
+
+            if(arrayAlquileres[i].equipo == AMOLADORA){
+
+                tiempoTotalAmoladora = tiempoTotalAmoladora + arrayAlquileres[i].tiempoReal;
+                cantAmoladora++;
+            }
+            if(arrayAlquileres[i].equipo == MEZCLADORA){
+
+                tiempoTotalAmoladora = tiempoTotalAmoladora + arrayAlquileres[i].tiempoReal;
+                cantMezcladora++;
+            }
+
+            if(arrayAlquileres[i].equipo == TALADRO){
+
+                tiempoTotalAmoladora = tiempoTotalAmoladora + arrayAlquileres[i].tiempoReal;
+                cantTaladro++;
+            }
+        }
+    }
+
+
+
+    return retorno;
+}
+*/
