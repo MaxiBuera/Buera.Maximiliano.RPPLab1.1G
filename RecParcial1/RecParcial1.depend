@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1607036520 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.rpplab1.1g\recparcial1\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"cliente.h"
+
+1607036480 c:\users\maxii\desktop\nuevo\buera.maximiliano.rpplab1.1g\recparcial1\cliente.h
+
+1601941424 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.rpplab1.1g\recparcial1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1601648894 c:\users\maxii\desktop\nuevo\buera.maximiliano.rpplab1.1g\recparcial1\utn.h
+
+1607043210 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.rpplab1.1g\recparcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"alquiler.h"
+	"informes.h"
+
+1607041299 c:\users\maxii\desktop\nuevo\buera.maximiliano.rpplab1.1g\recparcial1\alquiler.h
+
+1607041634 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.rpplab1.1g\recparcial1\alquiler.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"cliente.h"
+	"alquiler.h"
+
+1607043157 c:\users\maxii\desktop\nuevo\buera.maximiliano.rpplab1.1g\recparcial1\informes.h
+
+1607043164 source:c:\users\maxii\desktop\nuevo\buera.maximiliano.rpplab1.1g\recparcial1\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"cliente.h"
+	"alquiler.h"
+	"informes.h"
+
