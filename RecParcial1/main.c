@@ -7,7 +7,7 @@
 #include "alquiler.h"
 #include "informes.h"
 #define CLIENTES 20
-#define ALQUILERES 5
+#define ALQUILERES 10
 #define AMOLADORA 1
 #define MEZCLADORA 2
 #define TALADRO 3
@@ -72,6 +72,7 @@ int main()
     eAlquiler arrayAlquileres[ALQUILERES];
     alquiler_inicializarArrayAlquileres(arrayAlquileres,ALQUILERES);
     alquiler_altaForzada(arrayAlquileres,ALQUILERES,0,AMOLADORA,ALQUILADO,24,-1);
+    alquiler_altaForzada(arrayAlquileres,ALQUILERES,2,MEZCLADORA,FINALIZADO,24,20);
 
     alquiler_imprimirAlquileres(arrayAlquileres,ALQUILERES);
 /*

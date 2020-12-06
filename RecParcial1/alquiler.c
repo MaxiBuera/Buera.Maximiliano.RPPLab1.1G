@@ -167,6 +167,7 @@ int alquiler_nuevoAlquiler(eAlquiler* arrayAlquiler,int limite,eCliente* arrayCl
                     arrayAlquiler[indice].idCliente = idClienteAux;
                     arrayAlquiler[indice].isEmpty = OCUPADO;
                     arrayAlquiler[indice].equipo = equipoAux;
+                    arrayAlquiler[indice].estado = ALQUILADO;
                     arrayAlquiler[indice].tiempoEstimado = tiempoEstimadoAux;
                     arrayAlquiler[indice].id = id;
                     printf("\nAlquiler Agregado ...\n\n");
@@ -218,7 +219,7 @@ int alquiler_imprimirAlquileres(eAlquiler* arrayAlquileres,int limite)
                     printf("\t\tAlquilado");
                 }
                 else{
-                    printf("\t\tFinalizado");
+                    printf("\t\t\tFinalizado");
                 }
 
                 printf("\t\t%d hs",arrayAlquileres[i].tiempoEstimado);
@@ -260,6 +261,7 @@ int alquiler_finAlquiler(eAlquiler* arrayAlquileres,int limite,eCliente* arrayCl
 
                     if(!getValidInt("\nIngrese tiempo real del alquiler (en horas): ","\nError\n",&tiempoRealAux,1,672,1)){ // 2 semanas
                         arrayAlquileres[i].tiempoReal = tiempoRealAux;
+                        arrayAlquileres[i].estado = FINALIZADO;
 
                         printf("\nAlquiler Finalizado ...\n\n");
                         flag=1;

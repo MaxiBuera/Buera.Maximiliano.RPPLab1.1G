@@ -51,3 +51,55 @@
 	"alquiler.h"
 	"informes.h"
 
+1607291350 source:c:\users\maximiliano.e.buera\desktop\buera.maximiliano.rpplab1.1g\recparcial1\alquiler.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"cliente.h"
+	"alquiler.h"
+
+1607290467 c:\users\maximiliano.e.buera\desktop\buera.maximiliano.rpplab1.1g\recparcial1\utn.h
+
+1607290467 c:\users\maximiliano.e.buera\desktop\buera.maximiliano.rpplab1.1g\recparcial1\cliente.h
+
+1607290467 c:\users\maximiliano.e.buera\desktop\buera.maximiliano.rpplab1.1g\recparcial1\alquiler.h
+
+1607290467 source:c:\users\maximiliano.e.buera\desktop\buera.maximiliano.rpplab1.1g\recparcial1\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"cliente.h"
+
+1607291788 source:c:\users\maximiliano.e.buera\desktop\buera.maximiliano.rpplab1.1g\recparcial1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+	"cliente.h"
+	"alquiler.h"
+	"informes.h"
+
+1607290467 c:\users\maximiliano.e.buera\desktop\buera.maximiliano.rpplab1.1g\recparcial1\informes.h
+
+1607290467 source:c:\users\maximiliano.e.buera\desktop\buera.maximiliano.rpplab1.1g\recparcial1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1607290648 source:c:\users\maximiliano.e.buera\desktop\buera.maximiliano.rpplab1.1g\recparcial1\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"cliente.h"
+	"alquiler.h"
+	"informes.h"
+

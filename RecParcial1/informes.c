@@ -103,7 +103,7 @@ int informes_clientesConSusAlquileres(eCliente* arrayClientes, int limiteCliente
 
                     if(arrayAlquileres[j].isEmpty == OCUPADO){
 
-                        if(arrayAlquileres[i].idCliente == arrayClientes[j].id){
+                        if(arrayAlquileres[j].idCliente == arrayClientes[i].id){
 
                             printf("\n");
 
@@ -150,8 +150,7 @@ int informes_clientesConSusAlquileres(eCliente* arrayClientes, int limiteCliente
     return retorno;
 }
 
-/*int informes_tiempoPromedioRealDeLosEquipos(eCliente* arrayClientes, int limiteClientes, eAlquiler* arrayAlquileres,int limiteAlquileres){
-    //sin terminar
+int informes_tiempoPromedioRealDeLosEquipos(eCliente* arrayClientes, int limiteClientes, eAlquiler* arrayAlquileres,int limiteAlquileres){
 
     int retorno = -1;
     int i;
@@ -193,4 +192,3 @@ int informes_clientesConSusAlquileres(eCliente* arrayClientes, int limiteCliente
 
     return retorno;
 }
-*/
