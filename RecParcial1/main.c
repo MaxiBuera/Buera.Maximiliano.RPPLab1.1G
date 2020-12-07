@@ -72,7 +72,8 @@ int main()
     eAlquiler arrayAlquileres[ALQUILERES];
     alquiler_inicializarArrayAlquileres(arrayAlquileres,ALQUILERES);
     alquiler_altaForzada(arrayAlquileres,ALQUILERES,0,AMOLADORA,ALQUILADO,24,-1);
-    alquiler_altaForzada(arrayAlquileres,ALQUILERES,2,MEZCLADORA,FINALIZADO,24,20);
+    alquiler_altaForzada(arrayAlquileres,ALQUILERES,2,MEZCLADORA,FINALIZADO,25,20);
+    alquiler_altaForzada(arrayAlquileres,ALQUILERES,0,TALADRO,ALQUILADO,12,-1);
 
     alquiler_imprimirAlquileres(arrayAlquileres,ALQUILERES);
 /*
@@ -90,10 +91,14 @@ int main()
 */
     printf("\n\n\n");
     printf("\t***** Alquiler de Maquinaria *****");
-    printf("\n");
     do{
 
-        getValidInt("\n\n1.Alta Cliente\n2.Modificar Datos del Cliente\n3.Baja Cliente\n4.Nuevo Alquiler\n5.Fin del Alquiler\n6.Informes\n7.Salir\n","\nNo valida\n",&menu,1,7,1);
+        getValidInt("\n\n1.Alta Cliente"
+                    "\n2.Modificar Datos del Cliente"
+                    "\n3.Baja Cliente\n4.Nuevo Alquiler"
+                    "\n5.Fin del Alquiler"
+                    "\n6.Informes"
+                    "\n7.Salir\n","\nNo valida\n",&menu,1,7,1);
         switch(menu)
         {
             case 1:

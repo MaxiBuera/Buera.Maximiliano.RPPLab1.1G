@@ -26,3 +26,5 @@ int alquiler_nuevoAlquiler(eAlquiler* arrayAlquiler,int limite,eCliente* arrayCl
 int alquiler_imprimirAlquileres(eAlquiler* arrayAlquileres,int limite);
 
 int alquiler_finAlquiler(eAlquiler* arrayAlquiler,int limite,eCliente* arrayClientes ,int limiteClientes);
+
+int alquiler_mostrarAlquilerID(eAlquiler* arrayAlquileres,int limite,eCliente* arrayClientes, int limiteClientes);

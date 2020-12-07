@@ -135,12 +135,87 @@ int verificarCliente(eCliente* arrayClientes, int limiteClientes, int idCliente)
     return retorno;
 }
 
+
+/** \brief Verifica si el id pasado por parametro se encuentra en el array
+ *
+ * \param   array de alquileres
+ * \param   limite del array de alquileres
+ * \param   id a buscar
+ * \return  -1 si hay algun error, 0 si no
+ *
+ */
+int verificarAlquiler(eAlquiler* arrayAlquileres, int limiteAlquileres, int idAlquileres){
+
+    int i;
+    int retorno = -1;
+
+    for(i=0;i<limiteAlquileres;i++){
+
+        if(idAlquileres == arrayAlquileres[i].id){
+
+            retorno = 0;
+            return retorno;
+        }
+    }
+
+    return retorno;
+}
+
 void mostrarEquipos(){
 
     printf("\n\t**** Lista de Equipos ****\n");
     printf("\t-------------------------------------");
     printf("\n\tAmoladora\t1\n\tMezcladora\t2\n\tTaladro\t\t3\n");
 
+}
+
+/** \brief  Muestra la lista de Alquileres ( Equipo y id)
+ *
+ * \param   array de Alquileres
+ * \param   limite del array de Alquileres
+ * \return  -1 si hay un error, 0 si no
+ *
+ */
+int alquiler_mostrarAlquilerID(eAlquiler* arrayAlquileres,int limite,eCliente* arrayClientes, int limiteClientes){
+
+    int retorno = -1;
+    int i,j;
+    if(limite > 0 && arrayAlquileres != NULL)
+    {
+        retorno = 0;
+        printf("\n\t**** Lista de Alquileres ****\n");
+        printf("\n\tID Alquiler\tNombre Cliente\t\tEquipo");
+        printf("\n\t-----------------------------------------------------");
+        for(i=0;i<limite;i++)
+        {
+        	if(!arrayAlquileres[i].isEmpty)
+            {
+                for(j=0;j<limiteClientes;j++){
+
+                    if(arrayAlquileres[i].idCliente == arrayClientes[j].id){
+
+                        printf("\n\t%d\t\t%s %s\t\t",arrayAlquileres[i].id,arrayClientes[j].nombre,arrayClientes[j].apellido);
+                        if(arrayAlquileres[i].equipo == AMOLADORA){
+
+                            printf("Amoladora");
+                        }
+                        if(arrayAlquileres[i].equipo == MEZCLADORA){
+
+                            printf("Mezcladora");
+                        }
+
+                        if(arrayAlquileres[i].equipo == TALADRO){
+
+                            printf("Taladro");
+                        }
+                    }
+                }
+        	}
+        }
+    }
+
+    printf("\n\n");
+    return retorno;
 }
 
 int alquiler_nuevoAlquiler(eAlquiler* arrayAlquiler,int limite,eCliente* arrayClientes ,int limiteClientes, int indice){
@@ -196,14 +271,16 @@ int alquiler_imprimirAlquileres(eAlquiler* arrayAlquileres,int limite)
         int i;
         retorno = 0;
         printf("\n\t**** Alquileres ****\n");
-        printf("\n\tID Cliente\tEquipo Alquilado\tEstado\t\tTiempo Estimado\t\tTiempo Real");
-        printf("\n\t-----------------------------------------------------------------------------------------");
+        printf("\n\tID Alquiler\tID Cliente\tEquipo Alquilado\tEstado\t\tTiempo Estimado\t\tTiempo Real");
+        printf("\n\t------------------------------------------------------------------------------------------------------------");
         for(i=0;i<limite;i++)
         {
 
             if(arrayAlquileres[i].isEmpty != LIBRE){
 
-                printf("\n\t%d",arrayAlquileres[i].idCliente);
+                printf("\n\t%d",arrayAlquileres[i].id);
+
+                printf("\t\t%d",arrayAlquileres[i].idCliente);
 
                 if(arrayAlquileres[i].equipo == AMOLADORA){
                    printf("\t\tAmoladora");
@@ -212,23 +289,23 @@ int alquiler_imprimirAlquileres(eAlquiler* arrayAlquileres,int limite)
                     printf("\t\tMezcladora");
                 }
                 else{
-                    printf("\t\tTaladro");
+                    printf("\t\tTaladro\t");
                 }
 
                 if(arrayAlquileres[i].estado == ALQUILADO){
                     printf("\t\tAlquilado");
                 }
                 else{
-                    printf("\t\t\tFinalizado");
+                    printf("\t\tFinalizado");
                 }
 
-                printf("\t\t%d hs",arrayAlquileres[i].tiempoEstimado);
+                printf("\t%d hs",arrayAlquileres[i].tiempoEstimado);
 
                 if(arrayAlquileres[i].tiempoReal == -1){
-                    printf("\t\tNo definido");
+                    printf("\t\t\tNo definido");
                 }
                 else{
-                     printf("\t\t%d hs",arrayAlquileres[i].tiempoReal);
+                     printf("\t\t\t%d hs",arrayAlquileres[i].tiempoReal);
                 }
 
             }
@@ -244,6 +321,7 @@ int alquiler_finAlquiler(eAlquiler* arrayAlquileres,int limite,eCliente* arrayCl
 
     int retorno = -1;
     int idClienteAux;
+	int idAlquilerAux;
     int tiempoRealAux;
     int i;
     int flag=0;
@@ -255,20 +333,24 @@ int alquiler_finAlquiler(eAlquiler* arrayAlquileres,int limite,eCliente* arrayCl
         cliente_mostrarClienteID(arrayClientes,limiteClientes);
         if(!getValidInt("\nIngrese ID de Cliente: ","\nError\n",&idClienteAux,0,limiteClientes,1) && (!verificarCliente(arrayClientes,limiteClientes,idClienteAux))){
 
-            for(i=0;i<limite;i++){
+			alquiler_mostrarAlquilerID(arrayAlquileres,limite,arrayClientes,limiteClientes);
+            if(!getValidInt("\nIngrese ID de Alquiler: ","\nError\n",&idAlquilerAux,0,limite,1) && (!verificarAlquiler(arrayAlquileres,limite,idAlquilerAux))){
 
-                if(arrayAlquileres[i].idCliente == idClienteAux){
+				for(i=0;i<limite;i++){
 
-                    if(!getValidInt("\nIngrese tiempo real del alquiler (en horas): ","\nError\n",&tiempoRealAux,1,672,1)){ // 2 semanas
-                        arrayAlquileres[i].tiempoReal = tiempoRealAux;
-                        arrayAlquileres[i].estado = FINALIZADO;
+					if(arrayAlquileres[i].idCliente == idClienteAux){
 
-                        printf("\nAlquiler Finalizado ...\n\n");
-                        flag=1;
-                        retorno = 0;
-                    }
-                }
-            }
+						if(!getValidInt("\nIngrese tiempo real del alquiler (en horas): ","\nError\n",&tiempoRealAux,1,672,1)){ // 2 semanas
+							arrayAlquileres[i].tiempoReal = tiempoRealAux;
+							arrayAlquileres[i].estado = FINALIZADO;
+
+							printf("\nAlquiler Finalizado ...\n\n");
+							flag=1;
+							retorno = 0;
+						}
+					}
+				}
+			}
             if(flag == 0){
 
                  printf("\nCliente no disponible\n\n");
